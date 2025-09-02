@@ -1,0 +1,173 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, rgba(235, 144, 52, 0.937), #6c85e2); /* Smooth gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(122, 235, 84);
+    overflow: hidden;
+    position: relative;
+}
+
+.weather-container {
+    text-align: center;
+    padding: 40px 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    backdrop-filter: blur(10px); /* Blurred background */
+    transition: transform 0.3s ease-in-out;
+}
+
+.weather-container:hover {
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    font-weight: 400;
+    color: grey;
+}
+
+/* Input Styles */
+input[type="text"] {
+    width: 85%;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border: 1px solid rgb(165, 226, 42);
+    box-shadow: 0 0 8px rgb(211, 118, 48) (84, 119, 245, 0.5);
+}
+
+/* Button Styles */
+button {
+    padding: 12px 20px;
+    background-color: #5477f5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 85%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #415ab8;
+    transform: translateY(-2px); /* Small hover effect */
+}
+
+button:active {
+    transform: translateY(2px); /* Click effect */
+}
+
+/* Weather Info Styles */
+#weather-info {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #f9f9f9;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#weather-info img {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Error message styling */
+#weather-info p {
+    margin-bottom: 10px;
+}
+
+#weather-info .error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Cloud Animation */
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.clouds .cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: moveClouds 60s linear infinite;
+}
+
+.clouds .cloud-1 {
+    width: 250px;
+    height: 150px;
+    top: 30%;
+    left: -200px;
+    animation-duration: 75s;
+    animation-delay: 10s;
+}
+
+.clouds .cloud-2 {
+    width: 200px;
+    height: 120px;
+    top: 15%;
+    left: -250px;
+    animation-duration: 60s;
+    animation-delay: 5s;
+}
+
+.clouds .cloud-3 {
+    width: 300px;
+    height: 180px;
+    top: 50%;
+    left: -300px;
+    animation-duration: 90s;
+    animation-delay: 15s;
+}
+
+/* Keyframe for cloud movement */
+@keyframes moveClouds {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
